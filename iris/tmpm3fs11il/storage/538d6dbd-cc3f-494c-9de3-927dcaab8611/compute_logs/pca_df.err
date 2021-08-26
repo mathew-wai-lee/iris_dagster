@@ -1,0 +1,50 @@
+[32m2021-08-26 18:14:41[0m - dagster - [34mDEBUG[0m - my_pipeline - 538d6dbd-cc3f-494c-9de3-927dcaab8611 - 10156 - pca_df - LOGS_CAPTURED - Started capturing logs for solid: pca_df.
+[32m2021-08-26 18:14:41[0m - dagster - [34mDEBUG[0m - my_pipeline - 538d6dbd-cc3f-494c-9de3-927dcaab8611 - 10156 - pca_df - STEP_START - Started execution of step "pca_df".
+[32m2021-08-26 18:14:41[0m - dagster - [34mDEBUG[0m - my_pipeline - 538d6dbd-cc3f-494c-9de3-927dcaab8611 - 10156 - pca_df - LOADED_INPUT - Loaded input "normalized_df" using input manager "io_manager", from output "result" of step "normalize_df"
+[32m2021-08-26 18:14:41[0m - dagster - [34mDEBUG[0m - my_pipeline - 538d6dbd-cc3f-494c-9de3-927dcaab8611 - 10156 - pca_df - STEP_INPUT - Got input "normalized_df" of type "Any". (Type check passed).
+[32m2021-08-26 18:14:41[0m - dagster - [34mINFO[0m - my_pipeline - 538d6dbd-cc3f-494c-9de3-927dcaab8611 - pca_df - 
+          0         1         2         3
+0  0.301637  0.000716 -0.000478  0.004817
+1  0.270921  0.042354 -0.013049  0.002288
+2  0.297679  0.002407 -0.002916  0.003903
+3  0.262666  0.002667  0.014163 -0.003049
+4  0.307469 -0.018719  0.008060  0.004948
+[32m2021-08-26 18:14:41[0m - dagster - [34mDEBUG[0m - my_pipeline - 538d6dbd-cc3f-494c-9de3-927dcaab8611 - 10156 - pca_df - ASSET_MATERIALIZATION - Wrote PCA df to fs
+[32m2021-08-26 18:14:41[0m - dagster - [34mDEBUG[0m - my_pipeline - 538d6dbd-cc3f-494c-9de3-927dcaab8611 - 10156 - pca_df - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+[32m2021-08-26 18:14:41[0m - dagster - [34mDEBUG[0m - my_pipeline - 538d6dbd-cc3f-494c-9de3-927dcaab8611 - 10156 - pca_df - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2021-08-26 18:14:41[0m - dagster - [34mERROR[0m - [31mmy_pipeline - 538d6dbd-cc3f-494c-9de3-927dcaab8611 - 10156 - pca_df - STEP_FAILURE - Execution of step "pca_df" failed.
+
+dagster.core.errors.DagsterInvariantViolationError: Compute function for solid pca_df yielded a value of type <class 'dagster.core.definitions.event_metadata.IntMetadataEntryData'> rather than an instance of Output, AssetMaterialization, or ExpectationResult. Values yielded by solids must be wrapped in one of these types. If your solid has a single output and yields no other events, you may want to use `return` instead of `yield` in the body of your solid compute function. If you are already using `return`, and you expected to return a value of type <class 'dagster.core.definitions.event_metadata.IntMetadataEntryData'>, you may be inadvertently returning a generator rather than the value you expected.
+
+Stack Trace:
+  File "/usr/local/lib/python3.7/site-packages/dagster/core/execution/plan/execute_plan.py", line 193, in _dagster_event_sequence_for_step
+    for step_event in check.generator(step_events):
+  File "/usr/local/lib/python3.7/site-packages/dagster/core/execution/plan/execute_step.py", line 322, in core_dagster_event_sequence_for_step
+    _step_output_error_checked_user_event_sequence(step_context, user_event_sequence)
+  File "/usr/local/lib/python3.7/site-packages/dagster/core/execution/plan/execute_step.py", line 65, in _step_output_error_checked_user_event_sequence
+    for user_event in user_event_sequence:
+  File "/usr/local/lib/python3.7/site-packages/dagster/core/execution/plan/compute.py", line 138, in execute_core_compute
+    for step_output in _yield_compute_results(step_context, inputs, compute_fn):
+  File "/usr/local/lib/python3.7/site-packages/dagster/core/execution/plan/compute.py", line 122, in _yield_compute_results
+    yield _validate_event(event, step_context.step.solid_handle)
+  File "/usr/local/lib/python3.7/site-packages/dagster/core/execution/plan/compute.py", line 74, in _validate_event
+    ).format(solid_name=str(solid_handle), type_=type(event))
+[0m
+my_pipeline - 538d6dbd-cc3f-494c-9de3-927dcaab8611 - 10156 - pca_df - STEP_FAILURE - Execution of step "pca_df" failed.
+
+dagster.core.errors.DagsterInvariantViolationError: Compute function for solid pca_df yielded a value of type <class 'dagster.core.definitions.event_metadata.IntMetadataEntryData'> rather than an instance of Output, AssetMaterialization, or ExpectationResult. Values yielded by solids must be wrapped in one of these types. If your solid has a single output and yields no other events, you may want to use `return` instead of `yield` in the body of your solid compute function. If you are already using `return`, and you expected to return a value of type <class 'dagster.core.definitions.event_metadata.IntMetadataEntryData'>, you may be inadvertently returning a generator rather than the value you expected.
+
+Stack Trace:
+  File "/usr/local/lib/python3.7/site-packages/dagster/core/execution/plan/execute_plan.py", line 193, in _dagster_event_sequence_for_step
+    for step_event in check.generator(step_events):
+  File "/usr/local/lib/python3.7/site-packages/dagster/core/execution/plan/execute_step.py", line 322, in core_dagster_event_sequence_for_step
+    _step_output_error_checked_user_event_sequence(step_context, user_event_sequence)
+  File "/usr/local/lib/python3.7/site-packages/dagster/core/execution/plan/execute_step.py", line 65, in _step_output_error_checked_user_event_sequence
+    for user_event in user_event_sequence:
+  File "/usr/local/lib/python3.7/site-packages/dagster/core/execution/plan/compute.py", line 138, in execute_core_compute
+    for step_output in _yield_compute_results(step_context, inputs, compute_fn):
+  File "/usr/local/lib/python3.7/site-packages/dagster/core/execution/plan/compute.py", line 122, in _yield_compute_results
+    yield _validate_event(event, step_context.step.solid_handle)
+  File "/usr/local/lib/python3.7/site-packages/dagster/core/execution/plan/compute.py", line 74, in _validate_event
+    ).format(solid_name=str(solid_handle), type_=type(event))
+

@@ -1,0 +1,54 @@
+[32m2021-08-26 18:07:53[0m - dagster - [34mDEBUG[0m - my_pipeline - ae6f29de-4274-4b58-9ccc-b15ea0c457e9 - 7284 - pca_df - LOGS_CAPTURED - Started capturing logs for solid: pca_df.
+[32m2021-08-26 18:07:53[0m - dagster - [34mDEBUG[0m - my_pipeline - ae6f29de-4274-4b58-9ccc-b15ea0c457e9 - 7284 - pca_df - STEP_START - Started execution of step "pca_df".
+[32m2021-08-26 18:07:53[0m - dagster - [34mDEBUG[0m - my_pipeline - ae6f29de-4274-4b58-9ccc-b15ea0c457e9 - 7284 - pca_df - LOADED_INPUT - Loaded input "normalized_df" using input manager "io_manager", from output "result" of step "normalize_df"
+[32m2021-08-26 18:07:53[0m - dagster - [34mDEBUG[0m - my_pipeline - ae6f29de-4274-4b58-9ccc-b15ea0c457e9 - 7284 - pca_df - STEP_INPUT - Got input "normalized_df" of type "Any". (Type check passed).
+[32m2021-08-26 18:07:53[0m - dagster - [34mINFO[0m - my_pipeline - ae6f29de-4274-4b58-9ccc-b15ea0c457e9 - pca_df - 
+          0         1         2         3
+0  0.301637  0.000716 -0.000478  0.004817
+1  0.270921  0.042354 -0.013049  0.002288
+2  0.297679  0.002407 -0.002916  0.003903
+3  0.262666  0.002667  0.014163 -0.003049
+4  0.307469 -0.018719  0.008060  0.004948
+[32m2021-08-26 18:07:53[0m - dagster - [34mDEBUG[0m - my_pipeline - ae6f29de-4274-4b58-9ccc-b15ea0c457e9 - 7284 - pca_df - ASSET_MATERIALIZATION - Wrote PCA df to fs
+[32m2021-08-26 18:07:53[0m - dagster - [34mDEBUG[0m - my_pipeline - ae6f29de-4274-4b58-9ccc-b15ea0c457e9 - 7284 - pca_df - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+[32m2021-08-26 18:07:53[0m - dagster - [34mDEBUG[0m - my_pipeline - ae6f29de-4274-4b58-9ccc-b15ea0c457e9 - 7284 - pca_df - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2021-08-26 18:07:53[0m - dagster - [34mERROR[0m - [31mmy_pipeline - ae6f29de-4274-4b58-9ccc-b15ea0c457e9 - 7284 - pca_df - STEP_FAILURE - Execution of step "pca_df" failed.
+
+dagster.core.errors.DagsterExecutionStepExecutionError: Error occurred while executing solid "pca_df"::
+
+dagster.check.ParameterCheckError: Param "value" is not a int. Got 150 which is type <class 'numpy.int64'>.
+
+Stack Trace:
+  File "/usr/local/lib/python3.7/site-packages/dagster/core/execution/plan/utils.py", line 42, in solid_execution_error_boundary
+    yield
+  File "/usr/local/lib/python3.7/site-packages/dagster/utils/__init__.py", line 383, in iterate_with_context
+    next_output = next(iterator)
+  File "/workspaces/iris_dagster/iris/iris/solids/cluster.py", line 34, in pca_df
+    yield EventMetadata.int(pca_normalized_df.count()[0])
+  File "/usr/local/lib/python3.7/site-packages/dagster/core/definitions/event_metadata.py", line 542, in int
+    return IntMetadataEntryData(value)
+  File "/usr/local/lib/python3.7/site-packages/dagster/core/definitions/event_metadata.py", line 286, in __new__
+    return super(IntMetadataEntryData, cls).__new__(cls, check.opt_int_param(value, "value"))
+  File "/usr/local/lib/python3.7/site-packages/dagster/check/__init__.py", line 240, in opt_int_param
+    raise _param_type_mismatch_exception(obj, int, param_name)
+[0m
+my_pipeline - ae6f29de-4274-4b58-9ccc-b15ea0c457e9 - 7284 - pca_df - STEP_FAILURE - Execution of step "pca_df" failed.
+
+dagster.core.errors.DagsterExecutionStepExecutionError: Error occurred while executing solid "pca_df"::
+
+dagster.check.ParameterCheckError: Param "value" is not a int. Got 150 which is type <class 'numpy.int64'>.
+
+Stack Trace:
+  File "/usr/local/lib/python3.7/site-packages/dagster/core/execution/plan/utils.py", line 42, in solid_execution_error_boundary
+    yield
+  File "/usr/local/lib/python3.7/site-packages/dagster/utils/__init__.py", line 383, in iterate_with_context
+    next_output = next(iterator)
+  File "/workspaces/iris_dagster/iris/iris/solids/cluster.py", line 34, in pca_df
+    yield EventMetadata.int(pca_normalized_df.count()[0])
+  File "/usr/local/lib/python3.7/site-packages/dagster/core/definitions/event_metadata.py", line 542, in int
+    return IntMetadataEntryData(value)
+  File "/usr/local/lib/python3.7/site-packages/dagster/core/definitions/event_metadata.py", line 286, in __new__
+    return super(IntMetadataEntryData, cls).__new__(cls, check.opt_int_param(value, "value"))
+  File "/usr/local/lib/python3.7/site-packages/dagster/check/__init__.py", line 240, in opt_int_param
+    raise _param_type_mismatch_exception(obj, int, param_name)
+

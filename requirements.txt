@@ -1,0 +1,12 @@
+pylint 
+# pycodestyle
+# pydocstyle
+ipykernel
+graphql_ws==0.3.1
+pandas
+seaborn
+matplotlib
+sklearn
+dagster
+dagit
+requests

@@ -1,0 +1,17 @@
+[32m2021-08-26 18:07:53[0m - dagster - [34mDEBUG[0m - my_pipeline - ae6f29de-4274-4b58-9ccc-b15ea0c457e9 - 7284 - normalize_df - LOGS_CAPTURED - Started capturing logs for solid: normalize_df.
+[32m2021-08-26 18:07:53[0m - dagster - [34mDEBUG[0m - my_pipeline - ae6f29de-4274-4b58-9ccc-b15ea0c457e9 - 7284 - normalize_df - STEP_START - Started execution of step "normalize_df".
+[32m2021-08-26 18:07:53[0m - dagster - [34mDEBUG[0m - my_pipeline - ae6f29de-4274-4b58-9ccc-b15ea0c457e9 - 7284 - normalize_df - LOADED_INPUT - Loaded input "df" using input manager "io_manager", from output "result" of step "create_df"
+[32m2021-08-26 18:07:53[0m - dagster - [34mDEBUG[0m - my_pipeline - ae6f29de-4274-4b58-9ccc-b15ea0c457e9 - 7284 - normalize_df - STEP_INPUT - Got input "df" of type "Any". (Type check passed).
+[32m2021-08-26 18:07:53[0m - dagster - [34mINFO[0m - my_pipeline - ae6f29de-4274-4b58-9ccc-b15ea0c457e9 - normalize_df - 
+       sepal length (cm)  sepal width (cm)  petal length (cm)  petal width (cm)
+count         150.000000        150.000000         150.000000        150.000000
+mean            0.751400          0.405174           0.454784          0.141071
+std             0.044368          0.105624           0.159986          0.077977
+min             0.653877          0.238392           0.167836          0.014727
+25%             0.715261          0.326738           0.250925          0.048734
+50%             0.754883          0.354371           0.536367          0.164148
+75%             0.786912          0.527627           0.580025          0.197532
+max             0.860939          0.607125           0.636981          0.280419
+[32m2021-08-26 18:07:53[0m - dagster - [34mDEBUG[0m - my_pipeline - ae6f29de-4274-4b58-9ccc-b15ea0c457e9 - 7284 - normalize_df - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+[32m2021-08-26 18:07:53[0m - dagster - [34mDEBUG[0m - my_pipeline - ae6f29de-4274-4b58-9ccc-b15ea0c457e9 - 7284 - normalize_df - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2021-08-26 18:07:53[0m - dagster - [34mDEBUG[0m - my_pipeline - ae6f29de-4274-4b58-9ccc-b15ea0c457e9 - 7284 - normalize_df - STEP_SUCCESS - Finished execution of step "normalize_df" in 63ms.

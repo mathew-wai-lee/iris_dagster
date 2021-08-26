@@ -1,0 +1,27 @@
+// For format details, see https://aka.ms/vscode-remote/devcontainer.json or this file's README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.128.0/containers/python-3
+{
+    "name": "python_dev",
+    "image": "python:3.7.7",
+    // Set *default* container specific settings.json values on container create.
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash",
+        "python.pythonPath": "/opt/venv/bin/python",
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": true,
+        "python.linting.pydocstyleEnabled": true,
+        "python.linting.pycodestyleEnabled": true
+    },
+    // Add the IDs of extensions you want installed when the container is created.
+    "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter"
+    ],
+    
+    // Switch to root to apt-get and pip install, only in remote user context for vscode. INSECURE to post to production.
+    "remoteUser": "root",
+    // Use 'postCreateCommand' to run commands after the container is created.
+    "postCreateCommand": "apt-get install git",
+    "postCreateCommand": "pip install --no-cache-dir -r requirements.txt",
+    // "postAttachCommand": "pip install --no-cache-dir pylint pycodestyle pydocstyle graphql_ws==0.3.1 pandas",
+}
