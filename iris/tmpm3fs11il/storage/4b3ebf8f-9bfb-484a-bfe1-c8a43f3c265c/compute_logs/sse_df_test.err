@@ -1,0 +1,38 @@
+[32m2021-08-26 19:02:59[0m - dagster - [34mDEBUG[0m - my_pipeline - 4b3ebf8f-9bfb-484a-bfe1-c8a43f3c265c - 30372 - sse_df_test - LOGS_CAPTURED - Started capturing logs for solid: sse_df_test.
+[32m2021-08-26 19:02:59[0m - dagster - [34mDEBUG[0m - my_pipeline - 4b3ebf8f-9bfb-484a-bfe1-c8a43f3c265c - 30372 - sse_df_test - STEP_START - Started execution of step "sse_df_test".
+[32m2021-08-26 19:02:59[0m - dagster - [34mDEBUG[0m - my_pipeline - 4b3ebf8f-9bfb-484a-bfe1-c8a43f3c265c - 30372 - sse_df_test - LOADED_INPUT - Loaded input "pca_normalized_df" using input manager "io_manager", from output "result" of step "pca_df"
+[32m2021-08-26 19:02:59[0m - dagster - [34mDEBUG[0m - my_pipeline - 4b3ebf8f-9bfb-484a-bfe1-c8a43f3c265c - 30372 - sse_df_test - STEP_INPUT - Got input "pca_normalized_df" of type "Any". (Type check passed).
+[32m2021-08-26 19:02:59[0m - dagster - [34mINFO[0m - my_pipeline - 4b3ebf8f-9bfb-484a-bfe1-c8a43f3c265c - sse_df_test - 
+./
+[32m2021-08-26 19:02:59[0m - dagster - [34mINFO[0m - my_pipeline - 4b3ebf8f-9bfb-484a-bfe1-c8a43f3c265c - sse_df_test - 
+./
+[32m2021-08-26 19:02:59[0m - dagster - [34mERROR[0m - [31mmy_pipeline - 4b3ebf8f-9bfb-484a-bfe1-c8a43f3c265c - 30372 - sse_df_test - STEP_FAILURE - Execution of step "sse_df_test" failed.
+
+dagster.core.errors.DagsterExecutionStepExecutionError: Error occurred while executing solid "sse_df_test"::
+
+NameError: name 'sse' is not defined
+
+Stack Trace:
+  File "/usr/local/lib/python3.7/site-packages/dagster/core/execution/plan/utils.py", line 42, in solid_execution_error_boundary
+    yield
+  File "/usr/local/lib/python3.7/site-packages/dagster/utils/__init__.py", line 383, in iterate_with_context
+    next_output = next(iterator)
+  File "/usr/local/lib/python3.7/site-packages/dagster/core/execution/plan/compute_generator.py", line 65, in _coerce_solid_compute_fn_to_iterator
+    result = fn(context, **kwargs) if context_arg_provided else fn(**kwargs)
+  File "/workspaces/iris_dagster/iris/iris/solids/cluster.py", line 49, in sse_df_test
+[0m
+my_pipeline - 4b3ebf8f-9bfb-484a-bfe1-c8a43f3c265c - 30372 - sse_df_test - STEP_FAILURE - Execution of step "sse_df_test" failed.
+
+dagster.core.errors.DagsterExecutionStepExecutionError: Error occurred while executing solid "sse_df_test"::
+
+NameError: name 'sse' is not defined
+
+Stack Trace:
+  File "/usr/local/lib/python3.7/site-packages/dagster/core/execution/plan/utils.py", line 42, in solid_execution_error_boundary
+    yield
+  File "/usr/local/lib/python3.7/site-packages/dagster/utils/__init__.py", line 383, in iterate_with_context
+    next_output = next(iterator)
+  File "/usr/local/lib/python3.7/site-packages/dagster/core/execution/plan/compute_generator.py", line 65, in _coerce_solid_compute_fn_to_iterator
+    result = fn(context, **kwargs) if context_arg_provided else fn(**kwargs)
+  File "/workspaces/iris_dagster/iris/iris/solids/cluster.py", line 49, in sse_df_test
+

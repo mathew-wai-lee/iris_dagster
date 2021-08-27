@@ -1,0 +1,15 @@
+[32m2021-08-26 19:02:57[0m - dagster - [34mDEBUG[0m - my_pipeline - 4b3ebf8f-9bfb-484a-bfe1-c8a43f3c265c - 30372 - create_df - LOGS_CAPTURED - Started capturing logs for solid: create_df.
+[32m2021-08-26 19:02:58[0m - dagster - [34mDEBUG[0m - my_pipeline - 4b3ebf8f-9bfb-484a-bfe1-c8a43f3c265c - 30372 - create_df - STEP_START - Started execution of step "create_df".
+[32m2021-08-26 19:02:58[0m - dagster - [34mINFO[0m - my_pipeline - 4b3ebf8f-9bfb-484a-bfe1-c8a43f3c265c - create_df - 
+       sepal length (cm)  sepal width (cm)  petal length (cm)  petal width (cm)
+count         150.000000        150.000000         150.000000        150.000000
+mean            5.843333          3.057333           3.758000          1.199333
+std             0.828066          0.435866           1.765298          0.762238
+min             4.300000          2.000000           1.000000          0.100000
+25%             5.100000          2.800000           1.600000          0.300000
+50%             5.800000          3.000000           4.350000          1.300000
+75%             6.400000          3.300000           5.100000          1.800000
+max             7.900000          4.400000           6.900000          2.500000
+[32m2021-08-26 19:02:58[0m - dagster - [34mDEBUG[0m - my_pipeline - 4b3ebf8f-9bfb-484a-bfe1-c8a43f3c265c - 30372 - create_df - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+[32m2021-08-26 19:02:58[0m - dagster - [34mDEBUG[0m - my_pipeline - 4b3ebf8f-9bfb-484a-bfe1-c8a43f3c265c - 30372 - create_df - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2021-08-26 19:02:58[0m - dagster - [34mDEBUG[0m - my_pipeline - 4b3ebf8f-9bfb-484a-bfe1-c8a43f3c265c - 30372 - create_df - STEP_SUCCESS - Finished execution of step "create_df" in 242ms.

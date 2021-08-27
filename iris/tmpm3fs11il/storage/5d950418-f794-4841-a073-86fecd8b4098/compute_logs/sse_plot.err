@@ -1,0 +1,36 @@
+[32m2021-08-26 19:18:57[0m - dagster - [34mDEBUG[0m - my_pipeline - 5d950418-f794-4841-a073-86fecd8b4098 - 9566 - sse_plot - LOGS_CAPTURED - Started capturing logs for solid: sse_plot.
+[32m2021-08-26 19:18:57[0m - dagster - [34mDEBUG[0m - my_pipeline - 5d950418-f794-4841-a073-86fecd8b4098 - 9566 - sse_plot - STEP_START - Started execution of step "sse_plot".
+[32m2021-08-26 19:18:57[0m - dagster - [34mDEBUG[0m - my_pipeline - 5d950418-f794-4841-a073-86fecd8b4098 - 9566 - sse_plot - LOADED_INPUT - Loaded input "pca_output" using input manager "io_manager", from output "result" of step "pca_df"
+[32m2021-08-26 19:18:57[0m - dagster - [34mDEBUG[0m - my_pipeline - 5d950418-f794-4841-a073-86fecd8b4098 - 9566 - sse_plot - STEP_INPUT - Got input "pca_output" of type "Any". (Type check passed).
+[32m2021-08-26 19:18:57[0m - dagster - [34mERROR[0m - [31mmy_pipeline - 5d950418-f794-4841-a073-86fecd8b4098 - 9566 - sse_plot - STEP_FAILURE - Execution of step "sse_plot" failed.
+
+dagster.core.errors.DagsterExecutionStepExecutionError: Error occurred while executing solid "sse_plot"::
+
+TypeError: 'SolidDefinition' object is not subscriptable
+
+Stack Trace:
+  File "/usr/local/lib/python3.7/site-packages/dagster/core/execution/plan/utils.py", line 42, in solid_execution_error_boundary
+    yield
+  File "/usr/local/lib/python3.7/site-packages/dagster/utils/__init__.py", line 383, in iterate_with_context
+    next_output = next(iterator)
+  File "/usr/local/lib/python3.7/site-packages/dagster/core/execution/plan/compute_generator.py", line 65, in _coerce_solid_compute_fn_to_iterator
+    result = fn(context, **kwargs) if context_arg_provided else fn(**kwargs)
+  File "/workspaces/iris_dagster/iris/iris/solids/cluster.py", line 45, in sse_plot
+    context.log.info(f"{pca_df[0]}")
+[0m
+my_pipeline - 5d950418-f794-4841-a073-86fecd8b4098 - 9566 - sse_plot - STEP_FAILURE - Execution of step "sse_plot" failed.
+
+dagster.core.errors.DagsterExecutionStepExecutionError: Error occurred while executing solid "sse_plot"::
+
+TypeError: 'SolidDefinition' object is not subscriptable
+
+Stack Trace:
+  File "/usr/local/lib/python3.7/site-packages/dagster/core/execution/plan/utils.py", line 42, in solid_execution_error_boundary
+    yield
+  File "/usr/local/lib/python3.7/site-packages/dagster/utils/__init__.py", line 383, in iterate_with_context
+    next_output = next(iterator)
+  File "/usr/local/lib/python3.7/site-packages/dagster/core/execution/plan/compute_generator.py", line 65, in _coerce_solid_compute_fn_to_iterator
+    result = fn(context, **kwargs) if context_arg_provided else fn(**kwargs)
+  File "/workspaces/iris_dagster/iris/iris/solids/cluster.py", line 45, in sse_plot
+    context.log.info(f"{pca_df[0]}")
+

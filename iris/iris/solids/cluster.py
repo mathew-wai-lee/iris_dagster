@@ -6,6 +6,7 @@ from sklearn.preprocessing import normalize
 from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
 import numpy as np
+import seaborn as sns
 
 @solid
 def create_df(context):
@@ -28,11 +29,19 @@ def pca_df(context, normalized_df):
 
     remote_storage_path = "./"
     pca_normalized_df.to_csv(remote_storage_path + "pca.csv")
-    yield AssetMaterialization(asset_key="pca_df", description="Wrote PCA df to fs")
-    yield Output(remote_storage_path)
 
-    yield EventMetadata.int(100)
+    yield AssetMaterialization(
+        asset_key="pca_csv",
+        description="PCA to csv",
+        metadata={
+            "row_count": EventMetadata.int(int(pca_normalized_df.count()[0])),
+        },
+    )
 
+    yield Output([pca_normalized_df, pca])
 
-    return pca_normalized_df 
+@solid
+def sse_plot(context, pca_output):
+    context.log.info(f"{pca_output[0]}")
+    context.log.info(f"{pca_output[1]}")
 

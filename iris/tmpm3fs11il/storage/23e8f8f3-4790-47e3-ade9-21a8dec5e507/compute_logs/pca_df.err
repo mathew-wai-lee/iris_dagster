@@ -1,0 +1,15 @@
+[32m2021-08-26 19:02:04[0m - dagster - [34mDEBUG[0m - my_pipeline - 23e8f8f3-4790-47e3-ade9-21a8dec5e507 - 29548 - pca_df - LOGS_CAPTURED - Started capturing logs for solid: pca_df.
+[32m2021-08-26 19:02:05[0m - dagster - [34mDEBUG[0m - my_pipeline - 23e8f8f3-4790-47e3-ade9-21a8dec5e507 - 29548 - pca_df - STEP_START - Started execution of step "pca_df".
+[32m2021-08-26 19:02:05[0m - dagster - [34mDEBUG[0m - my_pipeline - 23e8f8f3-4790-47e3-ade9-21a8dec5e507 - 29548 - pca_df - LOADED_INPUT - Loaded input "normalized_df" using input manager "io_manager", from output "result" of step "normalize_df"
+[32m2021-08-26 19:02:05[0m - dagster - [34mDEBUG[0m - my_pipeline - 23e8f8f3-4790-47e3-ade9-21a8dec5e507 - 29548 - pca_df - STEP_INPUT - Got input "normalized_df" of type "Any". (Type check passed).
+[32m2021-08-26 19:02:05[0m - dagster - [34mINFO[0m - my_pipeline - 23e8f8f3-4790-47e3-ade9-21a8dec5e507 - pca_df - 
+          0         1         2         3
+0  0.301637  0.000716 -0.000478  0.004817
+1  0.270921  0.042354 -0.013049  0.002288
+2  0.297679  0.002407 -0.002916  0.003903
+3  0.262666  0.002667  0.014163 -0.003049
+4  0.307469 -0.018719  0.008060  0.004948
+[32m2021-08-26 19:02:05[0m - dagster - [34mDEBUG[0m - my_pipeline - 23e8f8f3-4790-47e3-ade9-21a8dec5e507 - 29548 - pca_df - ASSET_MATERIALIZATION - PCA to csv
+[32m2021-08-26 19:02:05[0m - dagster - [34mDEBUG[0m - my_pipeline - 23e8f8f3-4790-47e3-ade9-21a8dec5e507 - 29548 - pca_df - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+[32m2021-08-26 19:02:05[0m - dagster - [34mDEBUG[0m - my_pipeline - 23e8f8f3-4790-47e3-ade9-21a8dec5e507 - 29548 - pca_df - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2021-08-26 19:02:05[0m - dagster - [34mDEBUG[0m - my_pipeline - 23e8f8f3-4790-47e3-ade9-21a8dec5e507 - 29548 - pca_df - STEP_SUCCESS - Finished execution of step "pca_df" in 274ms.

@@ -1,0 +1,50 @@
+[32m2021-08-26 19:05:30[0m - dagster - [34mDEBUG[0m - my_pipeline - c8fca1a6-7a4e-431e-a6e0-bbf30e6fe5e6 - 32682 - pca_df - LOGS_CAPTURED - Started capturing logs for solid: pca_df.
+[32m2021-08-26 19:05:30[0m - dagster - [34mDEBUG[0m - my_pipeline - c8fca1a6-7a4e-431e-a6e0-bbf30e6fe5e6 - 32682 - pca_df - STEP_START - Started execution of step "pca_df".
+[32m2021-08-26 19:05:30[0m - dagster - [34mDEBUG[0m - my_pipeline - c8fca1a6-7a4e-431e-a6e0-bbf30e6fe5e6 - 32682 - pca_df - LOADED_INPUT - Loaded input "normalized_df" using input manager "io_manager", from output "result" of step "normalize_df"
+[32m2021-08-26 19:05:30[0m - dagster - [34mDEBUG[0m - my_pipeline - c8fca1a6-7a4e-431e-a6e0-bbf30e6fe5e6 - 32682 - pca_df - STEP_INPUT - Got input "normalized_df" of type "Any". (Type check passed).
+[32m2021-08-26 19:05:30[0m - dagster - [34mINFO[0m - my_pipeline - c8fca1a6-7a4e-431e-a6e0-bbf30e6fe5e6 - pca_df - 
+          0         1         2         3
+0  0.301637  0.000716 -0.000478  0.004817
+1  0.270921  0.042354 -0.013049  0.002288
+2  0.297679  0.002407 -0.002916  0.003903
+3  0.262666  0.002667  0.014163 -0.003049
+4  0.307469 -0.018719  0.008060  0.004948
+[32m2021-08-26 19:05:30[0m - dagster - [34mDEBUG[0m - my_pipeline - c8fca1a6-7a4e-431e-a6e0-bbf30e6fe5e6 - 32682 - pca_df - ASSET_MATERIALIZATION - PCA to csv
+/workspaces/iris_dagster/iris/iris/solids/cluster.py:40: ExperimentalWarning: "metadata_entries" is an experimental argument to function "Output.__new__". It may break in future versions, even between dot releases. To mute warnings for experimental functionality, invoke warnings.filterwarnings("ignore", category=dagster.ExperimentalWarning) or use one of the other methods described at https://docs.python.org/3/library/warnings.html#describing-warning-filters.
+  yield Output(remote_storage_path, pca_normalized_df, pca)
+[32m2021-08-26 19:05:30[0m - dagster - [34mERROR[0m - [31mmy_pipeline - c8fca1a6-7a4e-431e-a6e0-bbf30e6fe5e6 - 32682 - pca_df - STEP_FAILURE - Execution of step "pca_df" failed.
+
+dagster.core.errors.DagsterExecutionStepExecutionError: Error occurred while executing solid "pca_df"::
+
+dagster.check.ParameterCheckError: Param "metadata_entries" is not one of ['frozenlist', 'list']. Got PCA(n_components=4) which is type <class 'sklearn.decomposition._pca.PCA'>.
+
+Stack Trace:
+  File "/usr/local/lib/python3.7/site-packages/dagster/core/execution/plan/utils.py", line 42, in solid_execution_error_boundary
+    yield
+  File "/usr/local/lib/python3.7/site-packages/dagster/utils/__init__.py", line 383, in iterate_with_context
+    next_output = next(iterator)
+  File "/workspaces/iris_dagster/iris/iris/solids/cluster.py", line 40, in pca_df
+    yield Output(remote_storage_path, pca_normalized_df, pca)
+  File "/usr/local/lib/python3.7/site-packages/dagster/core/definitions/events.py", line 188, in __new__
+    of_type=(EventMetadataEntry, PartitionMetadataEntry),
+  File "/usr/local/lib/python3.7/site-packages/dagster/check/__init__.py", line 496, in opt_list_param
+    raise _param_type_mismatch_exception(obj_list, (frozenlist, list), param_name)
+[0m
+my_pipeline - c8fca1a6-7a4e-431e-a6e0-bbf30e6fe5e6 - 32682 - pca_df - STEP_FAILURE - Execution of step "pca_df" failed.
+
+dagster.core.errors.DagsterExecutionStepExecutionError: Error occurred while executing solid "pca_df"::
+
+dagster.check.ParameterCheckError: Param "metadata_entries" is not one of ['frozenlist', 'list']. Got PCA(n_components=4) which is type <class 'sklearn.decomposition._pca.PCA'>.
+
+Stack Trace:
+  File "/usr/local/lib/python3.7/site-packages/dagster/core/execution/plan/utils.py", line 42, in solid_execution_error_boundary
+    yield
+  File "/usr/local/lib/python3.7/site-packages/dagster/utils/__init__.py", line 383, in iterate_with_context
+    next_output = next(iterator)
+  File "/workspaces/iris_dagster/iris/iris/solids/cluster.py", line 40, in pca_df
+    yield Output(remote_storage_path, pca_normalized_df, pca)
+  File "/usr/local/lib/python3.7/site-packages/dagster/core/definitions/events.py", line 188, in __new__
+    of_type=(EventMetadataEntry, PartitionMetadataEntry),
+  File "/usr/local/lib/python3.7/site-packages/dagster/check/__init__.py", line 496, in opt_list_param
+    raise _param_type_mismatch_exception(obj_list, (frozenlist, list), param_name)
+

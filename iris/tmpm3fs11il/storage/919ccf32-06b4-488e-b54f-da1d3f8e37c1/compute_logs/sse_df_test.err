@@ -1,0 +1,9 @@
+[32m2021-08-26 19:03:16[0m - dagster - [34mDEBUG[0m - my_pipeline - 919ccf32-06b4-488e-b54f-da1d3f8e37c1 - 30794 - sse_df_test - LOGS_CAPTURED - Started capturing logs for solid: sse_df_test.
+[32m2021-08-26 19:03:16[0m - dagster - [34mDEBUG[0m - my_pipeline - 919ccf32-06b4-488e-b54f-da1d3f8e37c1 - 30794 - sse_df_test - STEP_START - Started execution of step "sse_df_test".
+[32m2021-08-26 19:03:16[0m - dagster - [34mDEBUG[0m - my_pipeline - 919ccf32-06b4-488e-b54f-da1d3f8e37c1 - 30794 - sse_df_test - LOADED_INPUT - Loaded input "pca_normalized_df" using input manager "io_manager", from output "result" of step "pca_df"
+[32m2021-08-26 19:03:16[0m - dagster - [34mDEBUG[0m - my_pipeline - 919ccf32-06b4-488e-b54f-da1d3f8e37c1 - 30794 - sse_df_test - STEP_INPUT - Got input "pca_normalized_df" of type "Any". (Type check passed).
+[32m2021-08-26 19:03:16[0m - dagster - [34mINFO[0m - my_pipeline - 919ccf32-06b4-488e-b54f-da1d3f8e37c1 - sse_df_test - 
+./
+[32m2021-08-26 19:03:16[0m - dagster - [34mDEBUG[0m - my_pipeline - 919ccf32-06b4-488e-b54f-da1d3f8e37c1 - 30794 - sse_df_test - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+[32m2021-08-26 19:03:16[0m - dagster - [34mDEBUG[0m - my_pipeline - 919ccf32-06b4-488e-b54f-da1d3f8e37c1 - 30794 - sse_df_test - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2021-08-26 19:03:16[0m - dagster - [34mDEBUG[0m - my_pipeline - 919ccf32-06b4-488e-b54f-da1d3f8e37c1 - 30794 - sse_df_test - STEP_SUCCESS - Finished execution of step "sse_df_test" in 277ms.

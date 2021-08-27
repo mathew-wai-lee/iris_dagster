@@ -1,0 +1,22 @@
+[32m2021-08-26 19:20:19[0m - dagster - [34mDEBUG[0m - my_pipeline - f193541d-c271-4e5f-ae30-733668f68bf4 - 10958 - sse_plot - LOGS_CAPTURED - Started capturing logs for solid: sse_plot.
+[32m2021-08-26 19:20:19[0m - dagster - [34mDEBUG[0m - my_pipeline - f193541d-c271-4e5f-ae30-733668f68bf4 - 10958 - sse_plot - STEP_START - Started execution of step "sse_plot".
+[32m2021-08-26 19:20:19[0m - dagster - [34mDEBUG[0m - my_pipeline - f193541d-c271-4e5f-ae30-733668f68bf4 - 10958 - sse_plot - LOADED_INPUT - Loaded input "pca_output" using input manager "io_manager", from output "result" of step "pca_df"
+[32m2021-08-26 19:20:19[0m - dagster - [34mDEBUG[0m - my_pipeline - f193541d-c271-4e5f-ae30-733668f68bf4 - 10958 - sse_plot - STEP_INPUT - Got input "pca_output" of type "Any". (Type check passed).
+[32m2021-08-26 19:20:19[0m - dagster - [34mINFO[0m - my_pipeline - f193541d-c271-4e5f-ae30-733668f68bf4 - sse_plot -             0         1         2         3
+0    0.301637  0.000716 -0.000478  0.004817
+1    0.270921  0.042354 -0.013049  0.002288
+2    0.297679  0.002407 -0.002916  0.003903
+3    0.262666  0.002667  0.014163 -0.003049
+4    0.307469 -0.018719  0.008060  0.004948
+..        ...       ...       ...       ...
+145 -0.165452 -0.019962 -0.047937 -0.001184
+146 -0.185297  0.018296 -0.028373  0.007665
+147 -0.162955 -0.016189 -0.016653 -0.001013
+148 -0.172977 -0.081485 -0.011549 -0.001731
+149 -0.172195 -0.042019  0.014849  0.000825
+
+[150 rows x 4 columns]
+[32m2021-08-26 19:20:19[0m - dagster - [34mINFO[0m - my_pipeline - f193541d-c271-4e5f-ae30-733668f68bf4 - sse_plot - PCA(n_components=4)
+[32m2021-08-26 19:20:19[0m - dagster - [34mDEBUG[0m - my_pipeline - f193541d-c271-4e5f-ae30-733668f68bf4 - 10958 - sse_plot - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+[32m2021-08-26 19:20:19[0m - dagster - [34mDEBUG[0m - my_pipeline - f193541d-c271-4e5f-ae30-733668f68bf4 - 10958 - sse_plot - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2021-08-26 19:20:19[0m - dagster - [34mDEBUG[0m - my_pipeline - f193541d-c271-4e5f-ae30-733668f68bf4 - 10958 - sse_plot - STEP_SUCCESS - Finished execution of step "sse_plot" in 444ms.
